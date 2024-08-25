@@ -6,7 +6,7 @@ setup:
     content_type: text/markdown
   author: Assaf Ben-David, Yonatan Perry, Uri Sternfeld
   license: MIT License
-  url: https://github.com/Cybereason/epic-pandas
+  url: https://github.com/epic-framework/epic-pandas
 
   python_requires: ">=3.10"
   top_packages:

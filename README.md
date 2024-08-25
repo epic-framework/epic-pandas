@@ -1,5 +1,5 @@
 # Epic pandas &mdash; Extra treats for the data-oriented
-[![Epic-pandas CI](https://github.com/Cybereason/epic-pandas/actions/workflows/ci.yml/badge.svg)](https://github.com/Cybereason/epic-pandas/actions/workflows/ci.yml)
+[![Epic-pandas CI](https://github.com/epic-framework/epic-pandas/actions/workflows/ci.yml/badge.svg)](https://github.com/epic-framework/epic-pandas/actions/workflows/ci.yml)
 
 ## What is it?
 The **epic-pandas** Python library provides various utilities for working with data. Most are built
