@@ -23,7 +23,7 @@ class TestSampleWithDistribution:
 class TestFillNA:
     NA_ROW = 1
     DATA = pd.DataFrame(np.arange(12).reshape(3, 4), columns=['A', 'B', 'C', 'D'])
-    DATA.iloc[NA_ROW, :] = np.NaN
+    DATA.iloc[NA_ROW, :] = np.nan
 
     def common_tests(self, other):
         assert other.index.equals(self.DATA.index)

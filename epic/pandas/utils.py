@@ -406,11 +406,11 @@ def fillna(obj: NDFrameT, value) -> NDFrameT:
     --------
     >>> df = pd.DataFrame(np.arange(12).reshape(3, 4),
     ...                   columns=['A', 'B', 'C', 'D'])
-    >>> df.iloc[1, :] = np.NaN
+    >>> df.iloc[1, :] = np.nan
     >>> df
          A    B     C     D
     0  0.0  1.0   2.0   3.0
-    1  NaN  NaN   NaN   NaN
+    1  nan  nan   nan   nan
     2  8.0  9.0  10.0  11.0
 
     Fill with (different instances of) empty lists:

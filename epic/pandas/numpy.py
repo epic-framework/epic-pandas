@@ -32,7 +32,7 @@ def isnan(array: ArrayLike) -> NDArray | bool:
     array = np.asarray(array)
     if np.issubdtype(array.dtype, np.number):
         return np.isnan(array)
-    result = array.astype(str) == str(np.NaN)
+    result = array.astype(str) == str(np.nan)
     return result if result.shape else result.item()
 
 

@@ -148,15 +148,15 @@ def df_from_iterable(
                 fill_value = sparse_values[col]
                 if col not in data:
                     data[col] = [], []
-                if val != fill_value and not (val is fill_value is np.NaN):
+                if val != fill_value and not (val is fill_value is np.nan):
                     data[col][0].append(len(idx))
                     data[col][1].append(val)
             else:
                 if col not in data:
-                    data[col] = [np.NaN] * len(idx)
+                    data[col] = [np.nan] * len(idx)
                 data[col].append(val)
         for col in set(data).difference(datum, sparse_values):
-            data[col].append(np.NaN)
+            data[col].append(np.nan)
         idx.append(key)
     index = pd.Index(idx, name=index_name)
     for col in data:
