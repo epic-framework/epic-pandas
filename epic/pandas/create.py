@@ -5,6 +5,7 @@ from toolz import compose
 from functools import partial
 from typing import TypeVar, Literal, Any
 from pandas._typing import Dtype, IndexLabel
+from pandas.core.arrays.sparse import make_sparse_index
 from collections.abc import Iterable, Mapping, Callable, Hashable
 
 from ultima import ultimap, Args
@@ -62,7 +63,7 @@ def df_from_iterable(
     """
     Read data from an iterable and build a DataFrame efficiently.
 
-    If working in parallel (n_jobs!=1) and ordered=False, the order of the samples may not be kept.
+    If working in parallel (n_workers!=1) and ordered=False, the order of the samples may not be kept.
     If a key is None, the sample is skipped.
 
     Parameters
@@ -161,9 +162,9 @@ def df_from_iterable(
     index = pd.Index(idx, name=index_name)
     for col in data:
         if col in sparse_values:
-            data[col] = pd.SparseArray(
+            data[col] = pd.arrays.SparseArray(
                 data=data[col][1],
-                sparse_index=pd._libs.sparse.IntIndex(len(idx), data[col][0]),
+                sparse_index=make_sparse_index(len(idx), data[col][0], kind="integer"),
                 fill_value=sparse_values[col],
                 dtype=dtypes.get(col),
             )
